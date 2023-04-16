@@ -4,14 +4,15 @@ These will be the environment secrets and variables that will be used by the app
 
 For the finer details, default configurations can be found at [/src/conf/config.ts](/src/conf/config.ts).
 
-### SECRETS:
-- GH_TOKEN
-- CLIENT_ID
-- CLIENT_SECRET
-- CLIENT_CODE
-- CLIENT_REDIRECT_URI
+```yaml
+env:
+    GH_TOKEN: ${{ secrets.GH_TOKEN }}
+    CLIENT_ID: ${{ secrets.CLIENT_ID }}
+    CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+    CLIENT_CODE: ${{ secrets.CLIENT_CODE }}
+    CLIENT_REDIRECT_URI: ${{ secrets.CLIENT_REDIRECT_URI }}
 
-### VARIABLES
-- GH_GIST_ID
-- CUSTOM_TITLE
-- CUSTOM_DESCRIPTION
+    GH_GIST_ID: ${{ vars.GH_GIST_ID }}
+    CUSTOM_TITLE: ${{ vars.CUSTOM_TITLE }}
+    CUSTOM_DESCRIPTION: ${{ vars.CUSTOM_DESCRIPTION }}
+```
