@@ -1,0 +1,57 @@
+name: Updater
+
+on:
+  schedule:
+    - cron: "0 */12 * * *"
+  push:
+    branches:
+      - "**"
+  workflow_dispatch:
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+      
+      - name: Enable Cache
+        id: cache-action
+        uses: actions/cache@v3
+        with:
+          path: |
+            cache/
+          key: ${{ runner.os }}-cache-${{ hashFiles('cache/**') }}
+
+      - name: Use or Generate Cache
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          if [ ! -d "cache" ]; then
+            mkdir cache
+          fi
+          touch cache/tokens.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Application
+        run: npm run build
+
+      - name: Run Application
+        run: npm run start
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          CLIENT_ID: ${{ secrets.CLIENT_ID }}
+          CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+          CLIENT_CODE: ${{ secrets.CLIENT_CODE }}
+          CLIENT_REDIRECT_URI: ${{ secrets.CLIENT_REDIRECT_URI }}
+
+          GH_GIST_ID: ${{ vars.GH_GIST_ID }}
+          CUSTOM_TITLE: ${{ vars.CUSTOM_TITLE }}
+          CUSTOM_DESCRIPTION: ${{ vars.CUSTOM_DESCRIPTION }}
