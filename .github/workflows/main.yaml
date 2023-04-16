@@ -3,9 +3,6 @@ name: Updater
 on:
   schedule:
     - cron: "0 */12 * * *"
-  push:
-    branches:
-      - "**"
   workflow_dispatch:
 
 jobs:
