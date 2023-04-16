@@ -22,6 +22,8 @@
   * [Spotify Integration](#spotify-integration)
   * [GitHub Integration](#github-integration)
   * [Launch](#launch)
+- [License](#license)
+- [Acknowledgements](#acknowledgements)
 
 ## About <a name = "about-the-project"></a>
 ### Description <a name = "description" ></a>
@@ -58,3 +60,14 @@ const scopes = [
 1. Create a Fork on this repository.
 2. With information noted from before, you must insert each bit as environment variable while following the [`environment.md`](/environment.md) as a guideline.
 3. Pin the Gist to your GitHub and enjoy the integration! :)
+
+## License <a name = "license"></a>
+Distributed under the [MIT](https://opensource.org/licenses/MIT) License. 
+
+Please see the [LICENSE](/LICENSE) for more information.
+
+## Acknowledgements <a name = "acknowledgements"></a>
+This section includes a useful list of sources that have helped my project— Either directly, or through other means such as inspiration.
+- [GitHub API](https://docs.github.com/en/rest?apiVersion=2022-11-28)
+- [GitHub Actions](https://github.com/features/actions)
+- [Spotify Web API](https://developer.spotify.com/documentation/web-api)
