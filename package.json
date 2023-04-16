@@ -2,14 +2,13 @@
   "name": "temporal-melodies",
   "version": "1.0.0",
   "main": "build/index.js",
+  "author": "altruisticnode",
+  "license": "MIT",
   "scripts": {
     "build": "tsup",
     "start": "node dist/",
     "lint": "tsc"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "@types/node": "^18.15.11",
     "dotenv": "^16.0.3",
