@@ -25,4 +25,4 @@ This project is a Node.js application which will integrate data fetched from the
     
 The application uses an [OAuth2](https://oauth.net/2/) authorization flow to obtain an access token, and then makes requests to the Spotify Web API to retrieve the user's recently played tracks. The recovered data is then formatted and written to any Gist of choice.
 
-This entirety of the program's logic is written in TypeScript which then compiles to be executed in a Node environment. The automation of the periodic data-fetching (along with caching of tokens) is done through [Github Actions](https://github.com/features/actions). You can view this in finer detail in the [main workflow](/.github/main.yaml).
+This entirety of the program's logic is written in TypeScript which then compiles to be executed in a Node environment. The automation of the periodic data-fetching (along with caching of tokens) is done through [Github Actions](https://github.com/features/actions). You can view this in finer detail in the [main workflow](/.github/workflows/main.yaml).
