@@ -55,6 +55,7 @@ const scopes = [
 ### GitHub Integration <a name = "github-integration"></a>
 1. Grab the `ID` of any public gist you would like to use for the integration. Create one here if you don't already have one: [gist.github.com](https://gist.github.com/)
 2. Create a `PAT` (Personal Access Token) through [GitHub's Developer Settings](https://github.com/settings/tokens/new). Don't forget to give it the `OAuth` scope for manipulating gists.
+3. Head over to the [main.yaml](/.github/workflows/main.yaml) and adjust the `cron` time to yout preference.
 
 ### Launch <a name = "launch"></a>
 1. Create a Fork on this repository.
